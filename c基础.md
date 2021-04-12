@@ -314,7 +314,7 @@ LinkedList LinkedListInit()
     L->next = NULL;                  //将next设置为NULL,初始长度为0的单链表
 }
 ////////////////////////////////////////////
-//单链表的建立1，头插法建立单链表
+//单链表的建立1，头插法建立单链表，永远将新的节点放在头结点后面的第一个位置
 LinkedList LinkedListCreatH()
 {
     Node *L;
@@ -322,7 +322,7 @@ LinkedList LinkedListCreatH()
     L->next = NULL;                      //初始化一个空链表
     
     ElemType x;                         //x为链表数据域中的数据
-    while(scanf("%d",&x) != EOF)
+    while(scanf("%d",&x) != EOF)       //scnf返回输入的项数，读入数据时遇到了“文件结束”则返回EOF
     {
         Node *p;
         p = (Node *)malloc(sizeof(Node));   //申请新的结点
@@ -333,7 +333,7 @@ LinkedList LinkedListCreatH()
     return L;
 }
 ////////////////////////////////////////////
-//单链表的建立2，尾插法建立单链表
+//单链表的建立2，尾插法建立单链表，永远将新节点放在最后一个节点的后面
 LinkedList LinkedListCreatT()
 {
     Node *L;
@@ -342,7 +342,7 @@ LinkedList LinkedListCreatT()
     Node *r;
     r = L;                          //r始终指向终端结点，开始时指向头结点
     ElemType x;                         //x为链表数据域中的数据
-    while(scanf("%d",&x) != EOF)
+    while(scanf("%d",&x) != EOF)   
     {
         Node *p;
         p = (Node *)malloc(sizeof(Node));   //申请新的结点
@@ -355,7 +355,7 @@ LinkedList LinkedListCreatT()
     return L;
 }
 ////////////////////////////////////////////
-//单链表的插入，在链表的第i个位置插入x的元素
+//单链表的插入，在链表的第i个位置插入值为x的节点
 LinkedList LinkedListInsert(LinkedList L,int i,ElemType x)
 {  
     Node *pre;                      //pre为前驱结点
