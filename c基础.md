@@ -199,6 +199,18 @@ char **             // 也是一个指向指针的指针，那个指针又指向
    </tr>
 </table>
 
+3.浮点数等值比较
+比较的是两个数的差值是否在一个范围区间内，如果差值在这个区间内则认为相等
+与0进行比较
+```c
+const float EPSINON = 0.00001; 
+if ((x >= - EPSINON) && (x <= EPSINON) 
+```
+也可以使用abs()或者fabs()对差值求绝对值后再与一个精度进行比较
+```c
+fabs(a - b) < FLT_EPSILON
+```
+
 ## c题目
 * [printf返回值](#printf返回值)
 * [enum枚举类型](#enum枚举类型)
